@@ -16,9 +16,11 @@ set_property(GLOBAL PROPERTY USE_FOLDERS ON)
 # set include directories
 include_directories(
 	${FastGlobalRegistration_SOURCE_DIR}
-	${FastGlobalRegistration_SOURCE_DIR}/External
-	${FastGlobalRegistration_SOURCE_DIR}/External/Eigen
-	${FastGlobalRegistration_SOURCE_DIR}/External/flann
+# Avoid using Eigen and flann included with the package, as it hangs
+# with recent compilers on Linux.
+#	${FastGlobalRegistration_SOURCE_DIR}/External
+#	${FastGlobalRegistration_SOURCE_DIR}/External/Eigen
+#	${FastGlobalRegistration_SOURCE_DIR}/External/flann
 	${FastGlobalRegistration_SOURCE_DIR}/FastGlobalRegistration
 	)
 
